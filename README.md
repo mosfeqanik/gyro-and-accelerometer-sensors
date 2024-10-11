@@ -1,4 +1,4 @@
-# next_room
+# gyro-and-accelerometer-sensors
 
 A new Flutter project.
 
