@@ -26,11 +26,10 @@ This project is a **Todo List application** where users can create and manage mu
 - **Local Database**: [`sqflite`](https://pub.dev/packages/sqflite), [`path`](https://pub.dev/packages/path)
 - **Sensor Handling**: [`sensors_plus`](https://pub.dev/packages/sensors_plus)
 
-<img align="left" alt="verify_page" width="360px"  src="https://github.com/mosfeqanik/todo-with-gyro-and-accelerometer-sensors/blob/main/assesment_screenshot/app_banner_5.jpg" />
-
-<img align="left" alt="verify_page" width="360px"  src="https://github.com/mosfeqanik/todo-with-gyro-and-accelerometer-sensors/blob/main/assesment_screenshot/full%20app%20screenplay.gif" />
-
-
+## ScreenShots of application
+<br /> 
+<img align="left" alt="verify_page" width="100%"  src="https://github.com/mosfeqanik/todo-with-gyro-and-accelerometer-sensors/blob/main/assesment_screenshot/app_banner_5.jpg" />
+![App Demo](https://github.com/mosfeqanik/todo-with-gyro-and-accelerometer-sensors/blob/main/assesment_screenshot/full%20app%20screenplay.gif)
 
 ## Getting Started
 
