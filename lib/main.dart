@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:next_room/src/features/todo_screen/provider/todo_provider.dart';
 import 'src/features/entry_screen/presentation/entry_page.dart';
 import 'src/features/entry_screen/provider/entry_provider.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +22,12 @@ Future main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => SensorProvider()),
+        ChangeNotifierProvider(
+          create: (_) => SensorProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => TodoNoteProvider(),
+        ),
       ],
       child: const MyApp(),
     ),

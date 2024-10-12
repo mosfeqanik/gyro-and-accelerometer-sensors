@@ -48,8 +48,7 @@ class NotesDatabase {
         ${NoteFields.listId} $integerType,
         ${NoteFields.isImportant} $boolType,
         ${NoteFields.number} $integerType,
-        ${NoteFields.title} $textType,
-        ${NoteFields.description} $textType,
+        ${NoteFields.task} $textType,
         ${NoteFields.time} $textType,
         FOREIGN KEY (${NoteFields.listId}) REFERENCES lists (id) ON DELETE CASCADE
       )
@@ -59,7 +58,6 @@ class NotesDatabase {
   // Create a new list
   Future<int> createList(String title) async {
     final db = await instance.database;
-
     final id = await db.insert(
       'lists',
       {'title': title},
@@ -69,12 +67,9 @@ class NotesDatabase {
     return id;
   }
 
-  // Create a new note in a specific list
   Future<Note> createNoteInList(Note note, int listId) async {
     final db = await instance.database;
-
     final noteWithList = note.copy(listId: listId);
-
     final id = await db.insert(
       tableNameNotes,
       noteWithList.toJson(),
@@ -84,7 +79,6 @@ class NotesDatabase {
     return noteWithList.copy(id: id);
   }
 
-  // Read all notes in a specific list
   Future<List<Note>> readNotesInList(int listId) async {
     final db = await instance.database;
 
@@ -114,11 +108,29 @@ class NotesDatabase {
       whereArgs: [note.id],
     );
   }
-
-  // Delete a note by its ID
+  Future<int> updateNoteInList(Note note, int listId) async {
+    final db = await instance.database;
+    final updatedNote = note.copy(listId: listId);
+    final rowsAffected = await db.update(
+      tableNameNotes,
+      updatedNote.toJson(),
+      where: '${NoteFields.id} = ?',
+      whereArgs: [note.id],
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+    return rowsAffected;
+  }
+  Future<int> deleteNoteInList(int noteId, int listId) async {
+    final db = await instance.database;
+    final rowsAffected = await db.delete(
+      tableNameNotes,
+      where: '${NoteFields.id} = ? AND ${NoteFields.listId} = ?',
+      whereArgs: [noteId, listId],
+    );
+    return rowsAffected;
+  }
   Future<int> deleteNoteById(int id) async {
     final db = await instance.database;
-
     return await db.delete(
       tableNameNotes,
       where: '${NoteFields.id} = ?',

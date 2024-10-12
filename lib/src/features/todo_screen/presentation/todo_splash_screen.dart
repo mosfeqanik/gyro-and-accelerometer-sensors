@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import '../../../utils/app_assets.dart';
 import '/src/features/todo_screen/presentation/todo_screen.dart';
 
 class SplashTodoScreen extends StatefulWidget {
@@ -13,19 +14,16 @@ class SplashTodoScreen extends StatefulWidget {
 }
 
 class SplashTodoScreenState extends State<SplashTodoScreen> {
-
   @override
   void initState() {
     super.initState();
-    // Navigate to the home page after 3 seconds
-    Timer(Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => const TodoScreen()),
-            (Route<dynamic> route) => false,
+        (Route<dynamic> route) => false,
       );
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +33,7 @@ class SplashTodoScreenState extends State<SplashTodoScreen> {
         children: [
           Center(
             child: Image.asset(
-              "assets/images/splashImage.png",
+              AppAssets.splashImage,
             ),
           )
         ],

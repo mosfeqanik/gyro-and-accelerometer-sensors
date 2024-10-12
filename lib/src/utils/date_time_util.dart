@@ -4,7 +4,9 @@ String formatDateTime(DateTime dateTime) {
   var formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(dateTime);
   return formattedDate;
 }
-
+String formatDate(DateTime date) {
+  return DateFormat('EEE, d MMM').format(date); // Format as 'Fri, 14 Sep'
+}
 String formatCurrentDateTime() {
   var now = DateTime.now();
   var formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(now);
