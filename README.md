@@ -26,4 +26,46 @@ This project is a **Todo List application** where users can create and manage mu
 - **Local Database**: [`sqflite`](https://pub.dev/packages/sqflite), [`path`](https://pub.dev/packages/path)
 - **Sensor Handling**: [`sensors_plus`](https://pub.dev/packages/sensors_plus)
 
+## Getting Started
 
+To run the project locally, follow these steps:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/todo-sensor-app.git
+    ```
+
+2. Install the dependencies:
+    ```bash
+    flutter pub get
+    ```
+
+3. Run the app:
+    ```bash
+    flutter run
+    ```
+
+## Folder Structure
+
+```plaintext
+lib/
+│
+├── src/
+│   ├── core/
+│   │   └── data/
+│   │       └── database.dart          # SQLite database setup and operations
+│   ├── features/
+│   │   ├── todo_screen/
+│   │   │   └── provider/
+│   │   │       └── todo_provider.dart  # State management for todo feature
+│   │   ├── sensor_part/
+│   │   │   ├── presentation/
+│   │   │   │   └── sensor_screen.dart  # UI for sensor data display
+│   │   │   └── provider/
+│   │   │       └── sensor_provider.dart # Sensor data provider
+
+## Demo
+
+https://github.com/mosfeqanik/todo-with-gyro-and-accelerometer-sensors/blob/main/assesment_screenshot/full%20app%20screenplay.gif
+
+https://github.com/mosfeqanik/todo-with-gyro-and-accelerometer-sensors/blob/main/assesment_screenshot/app_banner_5.jpg
