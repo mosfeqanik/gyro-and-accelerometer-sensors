@@ -47,6 +47,8 @@ dependencies:
   path:
   fluttertoast:
   shared_preferences:
+  sensors_plus: ^6.0.1
+  fl_chart:
 
 
 dev_dependencies:
