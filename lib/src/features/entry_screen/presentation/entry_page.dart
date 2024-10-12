@@ -47,10 +47,10 @@ class _EntryPageState extends State<EntryPage> {
               btnTextColor: Colors.white,
               btnTittle: "Sensor Tracking",
               btnFunc: () {
-                Navigator.of(context).pushAndRemoveUntil(
+                Navigator.of(context).push(
                   MaterialPageRoute(
-                      builder: (context) => const SensorDetailScreen()),
-                  (Route<dynamic> route) => false,
+                    builder: (context) => const SensorDetailScreen(),
+                  ),
                 );
               }),
         ],
