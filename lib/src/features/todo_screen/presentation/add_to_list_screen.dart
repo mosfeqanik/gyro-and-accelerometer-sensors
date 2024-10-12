@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:next_room/src/utils/app_colors.dart';
 import 'package:provider/provider.dart';
-
-import '../components/list_tile_design_for_task.dart';
+import '../../../core/widgets/list_tile_design_for_task.dart';
 import '../provider/todo_provider.dart';
 import 'add_task.dart';
 

@@ -3,8 +3,8 @@ import 'package:next_room/src/core/data/model/note.dart';
 import 'package:next_room/src/utils/app_colors.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/widgets/list_tile_design_for_task.dart';
 import '../../../utils/date_time_util.dart';
-import '../components/list_tile_design_for_task.dart';
 import '../provider/todo_provider.dart';
 
 class AddTaskScreen extends StatefulWidget {

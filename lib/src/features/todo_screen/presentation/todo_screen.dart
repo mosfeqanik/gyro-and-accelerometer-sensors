@@ -3,7 +3,7 @@ import 'package:next_room/src/features/todo_screen/presentation/todo_list_screen
 import 'package:next_room/src/utils/app_assets.dart';
 import 'package:next_room/src/utils/app_colors.dart';
 import 'package:provider/provider.dart';
-import '../components/list_tile_design.dart';
+import '../../../core/widgets/list_tile_design.dart';
 import '../provider/todo_provider.dart';
 
 import 'add_to_list_screen.dart';
@@ -61,7 +61,7 @@ class _TodoScreenState extends State<TodoScreen> {
         children: [
           Consumer<TodoNoteProvider>(
             builder: (context, provider, child) {
-              ;
+
               return provider.list != null
                   ? ListView.builder(
                       shrinkWrap: true,
